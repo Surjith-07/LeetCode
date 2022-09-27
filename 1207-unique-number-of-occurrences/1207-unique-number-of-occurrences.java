@@ -6,8 +6,8 @@ class Solution {
          }
         Set<Integer> set=new LinkedHashSet<>();
         for(Integer i:map.values()){
-            if(set.contains(i)) return false;
-            else set.add(i);
+            if(!set.add(i)) return false;
+            //else set.add(i);
         }
         
         return true;
