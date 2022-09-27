@@ -4,6 +4,12 @@ class Solution {
         for(int i=0;i<arr.length;++i){   
             map.merge(arr[i],1,Integer::sum);
          }
-        return map.size()==new LinkedHashSet<>(map.values()).size();
+        Set<Integer> set=new LinkedHashSet<>();
+        for(Integer i:map.values()){
+            if(set.contains(i)) return false;
+            else set.add(i);
+        }
+        
+        return true;
     }
 }
