@@ -2,7 +2,7 @@ class Solution {
     public int maximum69Number (int num) {
         int max=Integer.MIN_VALUE;
         char []ch=(num+"").toCharArray();
-        for(int i=0;i<(int)Math.ceil(Math.log10(num));++i){
+        for(int i=0;i<ch.length;++i){
             char chh[]=ch.clone();
             max=Math.max(swap(chh,i),max);
         }
