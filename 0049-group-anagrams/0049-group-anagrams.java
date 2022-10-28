@@ -7,7 +7,6 @@ class Solution {
             char ch[]=str[i].toCharArray();  Arrays.sort(ch);
             ans[p++]=new String(ch);
         }
-        //System.out.print(Arrays.toString(ans));
         for(int i=0;i<ans.length;++i){
              List<String> list=new ArrayList<>();
             if(ans[i]!="-1"){
