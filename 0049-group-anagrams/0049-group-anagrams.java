@@ -17,8 +17,9 @@ class Solution {
                 }
             }
             list.add(str[i]);
+            li.add(new ArrayList<>(list));
+            list.clear();
             ans[i]="-1";
-            if(list.size()!=0) li.add(new ArrayList<>(list)); list.clear();
     }
 }
         return li;
