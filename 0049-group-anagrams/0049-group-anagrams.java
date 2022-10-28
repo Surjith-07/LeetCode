@@ -19,7 +19,6 @@ class Solution {
             list.add(str[i]);
             li.add(new ArrayList<>(list));
             list.clear();
-            ans[i]="-1";
     }
 }
         return li;
