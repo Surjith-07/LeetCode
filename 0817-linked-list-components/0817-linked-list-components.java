@@ -10,7 +10,7 @@
  */
 class Solution {
     public int numComponents(ListNode head, int[] nums) {
-        List<Integer> set=new ArrayList<>();
+        Set<Integer> set=new HashSet<>();
         for(int i:nums) set.add(i);
         int ans=0,cnt=0;
         while(head!=null){
