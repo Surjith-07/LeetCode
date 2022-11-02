@@ -1,10 +1,9 @@
 class Solution {
-    public int isPrefixOfWord(String sen, String search) {
-        String s[]=sen.split(" ");
-        int idx=-1;
-        for(int i=0;i<s.length;++i){
-            if(s[i].startsWith(search)) return i+1; 
+    public int isPrefixOfWord(String sen, String sea) {
+        String ss[]=sen.split(" ");
+        for(int i=0;i<ss.length;++i){
+            if(ss[i].startsWith(sea)) return i+1;
         }
-        return idx;
+        return -1;
     }
 }
