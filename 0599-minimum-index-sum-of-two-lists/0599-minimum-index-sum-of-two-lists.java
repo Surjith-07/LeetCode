@@ -5,7 +5,7 @@ class Solution {
         for(int i=0;i<len1;++i){
             map.put(l1[i],i);
         }
-        List<String> li=new ArrayList<>();
+        List<String> li=new LinkedList<>();
         for(int i=0;i<len2;++i){
             if(map.containsKey(l2[i])){
                 Integer k=map.get(l2[i]);
