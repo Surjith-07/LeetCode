@@ -9,16 +9,13 @@ class Solution {
         for(int i=0;i<len2;++i){
             if(map.containsKey(l2[i])){
                 Integer k=map.get(l2[i]);
-                if(k!=null && k+i<min){
-                    min = k+i;
-                }
-            }
-        }
-         for(int i=0;i<len2;++i){
-            if(map.containsKey(l2[i])){
-                Integer k=map.get(l2[i]);
-                if(k!=null && k+i==min){
+                if(k!=null && k+i<=min){
                     li.add(l2[i]);
+                    if(k+i<min){
+                        min=i+k;
+                        li.clear();
+                        li.add(l2[i]);
+                    }
                 }
             }
         }
