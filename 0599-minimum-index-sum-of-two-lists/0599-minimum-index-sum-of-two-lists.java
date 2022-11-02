@@ -1,27 +1,28 @@
 class Solution {
     public String[] findRestaurant(String[] l1, String[] l2) {
         int min=Integer.MAX_VALUE,len1=l1.length,len2=l2.length;
+        Map<String,Integer> map=new LinkedHashMap<>();
         for(int i=0;i<len1;++i){
-            for(int j=0;j<len2;++j){
-                if(l1[i].equals(l2[j])){
-                    if(min>(i+j)){
-                        min=(i+j);
-                    }
+            map.put(l1[i],i);
+        }
+        List<String> li=new ArrayList<>();
+        for(int i=0;i<len2;++i){
+            if(map.containsKey(l2[i])){
+                Integer k=map.get(l2[i]);
+                if(k!=null && k+i<min){
+                    min = k+i;
                 }
             }
         }
-         String ans[]=new String[len1+len2];
-            int q=0;
-        for(int i=0;i<len1;++i){
-            for(int j=0;j<len2;++j){
-                if(l1[i].equals(l2[j])){
-                    if(min==i+j){
-                        ans[q++]=l1[i];
-                    }
+         for(int i=0;i<len2;++i){
+            if(map.containsKey(l2[i])){
+                Integer k=map.get(l2[i]);
+                if(k!=null && k+i==min){
+                    li.add(l2[i]);
                 }
             }
         }
-       
-    return Arrays.copyOfRange(ans,0,q);
+        
+        return li.toArray(new String[li.size()]);
     }
 }
