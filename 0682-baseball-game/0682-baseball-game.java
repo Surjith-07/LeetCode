@@ -7,20 +7,21 @@ class Solution {
                 BigInteger n=new BigInteger(s);
                 boss.push(n);
             }
-
+            else if(!boss.isEmpty()){
             if(s.equals("C")){
                 boss.pop();
             }if(s.equals("D")){
                 BigInteger l=boss.pop();
                 boss.push(l);
-                boss.push(l.multiply(new BigInteger(String.valueOf(2))));
+                boss.push(l.multiply(new BigInteger(2+"")));
             }if(s.equals("+")){
                 BigInteger v1=boss.pop();
                 BigInteger v2=boss.pop();
                 boss.push(v2); boss.push(v1); boss.push(v1.add(v2));
                 }
-        }
-        BigInteger sum=new BigInteger(String.valueOf(0));
+        }   
+    }
+        BigInteger sum=new BigInteger(0+"");
         while(!boss.isEmpty()){ sum=sum.add(boss.pop());}
         return sum.intValue();
     }
