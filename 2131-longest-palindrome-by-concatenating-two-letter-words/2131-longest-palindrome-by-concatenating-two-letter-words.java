@@ -16,12 +16,11 @@ class Solution {
                 dif.put(s2,0);
             }
         }
-        int k=0;
+        boolean b=true;
         for(String s:sam.keySet()){
             if(sam.get(s)%2==0) ans+=sam.get(s)*2; 
-            else{ ans+=(sam.get(s)-1)*2; k++;}
+            else{ ans+=(sam.get(s)-1)*2; b=false;}
         }
-        if(k!=0) ans+=2;
-        return ans;
+        return b?ans:ans+2;
     }
 }
