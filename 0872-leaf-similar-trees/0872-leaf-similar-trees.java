@@ -14,8 +14,9 @@
  * }
  */
 class Solution {
-    List<Integer> sb1=new ArrayList<>(),sb2=new ArrayList<>();
+    
     public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+        List<Integer> sb1=new ArrayList<>(),sb2=new ArrayList<>();
         if(root1==null || root2==null) return false;
         add(root1,sb1);
         add(root2,sb2);
